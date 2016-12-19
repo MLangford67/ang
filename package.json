@@ -2,11 +2,23 @@
   "name": "angularpract",
   "version": "1.0.0",
   "description": "",
-  
+
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+   "lite-server": "./bin/lite-server",
+  "dependencies": {
+    "@types/angular": "^1.5.20",
+    "@types/angular-ui-router": "^1.1.35",
+    "scripts": {
+      "dev": "lite-server"
+    }
+  }
+
+
+
 }

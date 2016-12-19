@@ -1,22 +1,48 @@
+
 <!DOCTYPE html>
-<html ng-app='MyApp'>
+<html ng-app="MyApp">
   <head>
     <meta charset="utf-8">
     <title></title>
-    <base href="/"/>
+    <base href="/" />
   </head>
-  <body ng-controller="MainController as main">
+  <body>
 
-    <a ui-sref="Page1">Page 1</a> | <a ui-sref="Page2">Page 2</a> | <a ui-sref="Nowhere">Nowhere</a>
-       <hr />
-       $state.current.templateUrl = {{main.$state.current.templateUrl}}
-       <hr />
+<a>Secret</a>
+<a>Login</a>
+<a>Public</a>
 
-       <ui-view></ui-view>
+ <ui-view></ui-view>
 
-<script src='C:\Users\Michael\Documents\CCProjects\angularpract\bower_components\angular\angular.min.js'></script>
-<script src='C:\Users\Michael\Documents\CCProjects\angularpract\bower_components\angular-ui-router\release\angular-ui-router.min.js'></script>
-<script src='C:\Users\Michael\Documents\CCProjects\angularpract\ngApp\app.js'></script>
-<script src='C:\Users\Michael\Documents\CCProjects\angularpract\controllers\cont.js'></script>
+
+    <!-- <h2>Product List</h2> -->
+<!--
+<ul>
+    <li ng-repeat="product in controller.products">
+        <a ui-sref="Details({ id: product.id })">{{product.name}}</a>
+    </li>
+</ul> -->
+
+
+<!-- put as controller!! -->
+    <!-- ng-controller='MovieListController as controller' -->
+
+    <!-- <h2>Movies</h2>
+        <ul>
+            <li ng-repeat="movie in controller.movies">{{movie.title}}</li>
+        </ul> -->
+
+<!--
+    <a href="/">Page 1</a>
+    <a href="/page2">Page 2</a>
+<ui-view></ui-view> -->
+
+
+<script src='bower_components\angular\angular.min.js'></script>
+<script src='bower_components\angular-ui-router\release\angular-ui-router.min.js'></script>
+<!-- <script src='bower_components\angular-route\angular-route.js'></script> -->
+<script src='ngApp\app.js'></script>
+<script src='ngApp\cont.js'></script>
+
   </body>
 </html>
