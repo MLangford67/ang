@@ -77,7 +77,7 @@
 //     });
 //
 //
-  angular.module('MyApp').run((
+// angular.module('MyApp').run((
 //         $rootScope: ng.IRootScopeService,
 //         $state: ng.ui.IStateService,
 //         accountService: MyApp.Services.AccountService
@@ -95,3 +95,39 @@
 //
 //
  // }
+
+ namespace MyApp {
+
+     angular.module('MyApp', ['ui.router', 'ngResource']).config((
+         $stateProvider: ng.ui.IStateProvider,
+         $urlRouterProvider: ng.ui.IUrlRouterProvider,
+         $locationProvider: ng.ILocationProvider
+     ) => {
+         // Define routes
+         $stateProvider
+             .state('home', {
+                 url: '/',
+                 templateUrl: '/ngApp/home.html'
+             })
+             .state('secret', {
+                 url: '/secret',
+                 templateUrl: '/ngApp/secret.html',
+                 data: {
+                     requiresAuthentication: true
+                 }
+             })
+             .state('public', {
+                 url: '/public',
+                 templateUrl: '/ngApp/public.html'
+             })
+             .state('login', {
+                 url: '/login',
+                 templateUrl: '/ngApp/login.html'
+             });
+
+
+         // Enable HTML5 navigation
+         $locationProvider.html5Mode(true);
+     });
+
+ }

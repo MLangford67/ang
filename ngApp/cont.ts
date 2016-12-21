@@ -51,3 +51,43 @@
 //    }
 //
 // }
+
+// namespace MyAPp.Controllers{
+//   class ProductsController{
+//     public products;
+//
+//     constructor($http: ng.IHttpService){
+//       $http.get('/api/products').then((response)=>{
+//         this.products = response.data;
+//       });
+//     }
+//   }
+//   angular.module('ProductsApp').controller('ProductsController', ProductsController)
+// }
+
+namespace MyApp.Services {
+
+    export class MovieServices {
+        private MovieResource;
+
+        public listMovies() {
+            return this.MovieResource.query();
+        }
+
+        constructor($resource: ng.resource.IResourceService) {
+            this.MovieResource = $resource('/api/movies');
+        }
+    }
+
+    angular.module('MyApp').service('movieService', MovieService);
+
+
+    export class AccountService {
+        public isLoggedIn() {
+            return false;
+        }
+    }
+
+    angular.module('MyApp').service('accountService', AccountService);
+
+}
